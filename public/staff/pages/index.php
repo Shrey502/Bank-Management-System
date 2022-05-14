@@ -36,11 +36,11 @@ $query = mysqli_query($conn, $sql) or die(`Query error`);
         <td style="text-align: center;"><?php echo $data['Visible'] == 1 ?   "true"  :  'false' ?></td>
         <td style="text-align: center;"><?php echo $data['Name'] ?></td>
         <td class="text-center"> <a class="action" href=" ">View</a></td>  
-        <td class="text-center"><a class="action" href='../subjects/edit.php/?id=<?php echo $data['ID'] ?>'>Edit</a></td>
-        <td class="text-center"><a class="action" href="">Delete</a></td>
+        <td class="text-center"><a class="action" href='../pages/edit.php/?id=<?php echo $data['ID'] ?>'>Edit</a></td>
+        <td class="text-center"><a class="action" href='../pages/deletep.php/?id=<?php echo $data['ID'] ?>'>Delete</a></td>
       </tr>
 
-         <?php 
+         <?php var_dump("Delete");
          }
         } 
         ?>

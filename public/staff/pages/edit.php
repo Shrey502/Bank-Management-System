@@ -7,7 +7,7 @@
   
   $page_title = 'Edit Page';
   if(!isset($_GET['id'])){
-    redirect_to(url_for('staff/subjects/index.php'));
+    redirect_to(url_for('staff/pages/index.php'));
   }
   $id = $_GET['id'];
 if (isset($_POST['submit'])) {
