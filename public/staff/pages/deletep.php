@@ -1,7 +1,7 @@
 <?php 
-  include './../../../database/connection.php';
+  include './../../../database/connection.php';   
 require_once('../../../private/initialize.php');
-include(SHARED_PATH . '/staff_header.php'); 
+include(SHARED_PATH . '/staff_header.php');
 
 $id = $_GET['id'];
 
@@ -32,5 +32,5 @@ $page_title = 'Delete page';
 
 </div>
 
-
+ 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

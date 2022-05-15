@@ -9,21 +9,8 @@
   if(!isset($_GET['id'])){
     redirect_to(url_for('staff/pages/index.php'));
   }
+  
   $id = $_GET['id'];
-if (isset($_POST['submit'])) {
-
-    $menu_name = $_POST['menu_name'];
-    $position = $_POST['position'] ;
-    $visible = $_POST['visible'] ;
-
-    $update = "UPDATE `page` SET `Position`='{$position}',`Visible`='{$visible}',`Name`='{$menu_name}' WHERE ID = {$id}";
-    echo $update;
-  // $result = mysqli_query($conn, $update);
-  // if ($result) {
-  //   header('Location: ./index.php');
-  // }
-
-}
 ?>
 
 <div id="content">
@@ -34,13 +21,14 @@ if (isset($_POST['submit'])) {
     <h1>Edit Page</h1>
 
     <?php 
-      $sql= "SELECT * FROM `page` WHERE ID = {$id}";
+      $sql= "SELECT * FROM `pages` WHERE ID = {$id}";
       $query  = mysqli_query($conn, $sql);
       if (mysqli_num_rows($query) > 0) {
         while ($data  = mysqli_fetch_assoc($query)) {
     ?>
 
-    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+    <form action="<?php echo url_for('/staff/pages/updatequery.php'); ?>" method="POST">
+    <input type="hidden" name="id" value="<?php echo $id ?>" />
       <dl>
         <dt>Menu Name</dt>
         <dd><input type="text" name="menu_name" value="<?php echo $data['Name'] ?>" /></dd>
@@ -56,11 +44,11 @@ if (isset($_POST['submit'])) {
       <dl>
         <dt>Visible</dt>
         <dd>
-         <?php echo  $data['Visible'] == 1 ?  '<input type="checkbox" checked name="visible" value="1" />'  : '<input type="checkbox" name="visible" value="0" />' ?>
+         <?php echo  $data['Visible'] == 1 ?  '<input type="checkbox" checked name="visible" value="0" />'  : '<input type="checkbox" name="visible" value="1" />' ?>
         </dd>
       </dl>
       <div id="operations">
-        <input type="submit" value="Edit Subject" />
+        <input type="submit" value="Edit Page" />
       </div>
     </form>
 

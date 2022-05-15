@@ -40,7 +40,7 @@ $query = mysqli_query($conn, $sql) or die(`Query error`);
         <td class="text-center"><a class="action" href='../pages/deletep.php/?id=<?php echo $data['ID'] ?>'>Delete</a></td>
       </tr>
 
-         <?php var_dump("Delete");
+         <?php ;
          }
         } 
         ?>

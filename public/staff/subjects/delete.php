@@ -6,7 +6,7 @@ include(SHARED_PATH . '/staff_header.php');
 $id = $_GET['id'];
 
 if(!isset($id)) {
-  redirect_to(url_for('/staff/subjects/index.php'));
+  redirect_to(url_for('../staff/subjects/index.php'));
 }
 
 $page_title = 'Delete Subject'; 
